@@ -11,17 +11,17 @@ public:
         return result;
     }
 
-    // 自底向上递归（引用传递）
+    // 鑷簳鍚戜笂閫掑綊锛堝紩鐢ㄤ紶閫掞級
     void recursive_generate(string& cur, vector<string> &result, int n, int left, int right) {
-        // 顶层递归终止条件
+        // 椤跺眰閫掑綊缁堟鏉′欢
         if (cur.size() == 2 * n) {
             result.push_back(cur);
             return;
         }
         if (left < n) {
-            cur += "(";     // 本层处理
-            recursive_generate(cur, result, n, left + 1, right);    // 上一层递归调用
-            cur.pop_back();     // 恢复以处理另一分支
+            cur += "(";     // 鏈眰澶勭悊
+            recursive_generate(cur, result, n, left + 1, right);    // 涓婁竴灞傞�掑綊璋冪敤
+            cur.pop_back();     // 鎭㈠浠ュ鐞嗗彟涓�鍒嗘敮
         }
         if (right < left) {
             cur += ")";
